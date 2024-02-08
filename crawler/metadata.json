@@ -1,0 +1,72 @@
+[
+    {
+        "name": "10 Minutes",
+        "creator": "Inna",
+        "url": "https://www.youtube.com/watch?v=oGpo9uwbW1k",
+        "music_path": "../react-music-player/src/audios/10 Minutes.mp3",
+        "cover_path": "../react-music-player/src/audios/10 Minutes.jpeg"
+    },
+    {
+        "name": "Love",
+        "creator": "Inna",
+        "url": "https://www.youtube.com/watch?v=04fcgFs-mjA",
+        "music_path": "../react-music-player/src/audios/Love.mp3",
+        "cover_path": "../react-music-player/src/audios/Love.jpeg"
+    },
+    {
+        "name": "Dreadlock Holiday",
+        "creator": "10cc",
+        "url": "https://www.youtube.com/watch?v=fUNTk5xsxk4",
+        "music_path": "../react-music-player/src/audios/Dreadlock Holiday.mp3",
+        "cover_path": "../react-music-player/src/audios/Dreadlock Holiday.jpeg"
+    },
+    {
+        "name": "I'm Not in Love",
+        "creator": "10cc",
+        "url": "https://www.youtube.com/watch?v=STugQ0X1NoI",
+        "music_path": "../react-music-player/src/audios/I'm Not in Love.mp3",
+        "cover_path": "../react-music-player/src/audios/I'm Not in Love.jpeg"
+    },
+    {
+        "name": "The Things We Do For Love",
+        "creator": "10cc",
+        "url": "https://www.youtube.com/watch?v=P0rf3_viTxk",
+        "music_path": "../react-music-player/src/audios/The Things We Do For Love.mp3",
+        "cover_path": "../react-music-player/src/audios/The Things We Do For Love.jpeg"
+    },
+    {
+        "name": "Wasteland",
+        "creator": "10 Years",
+        "url": "https://www.youtube.com/watch?v=OPXUeeFXc90",
+        "music_path": "../react-music-player/src/audios/Wasteland.mp3",
+        "cover_path": "../react-music-player/src/audios/Wasteland.jpeg"
+    },
+    {
+        "name": "Anthem for the Underdog",
+        "creator": "12 Stones",
+        "url": "https://www.youtube.com/watch?v=a5sSwfF8PFA",
+        "music_path": "../react-music-player/src/audios/Anthem for the Underdog.mp3",
+        "cover_path": "../react-music-player/src/audios/Anthem for the Underdog.jpeg"
+    },
+    {
+        "name": "Broken",
+        "creator": "12 Stones",
+        "url": "https://www.youtube.com/watch?v=M1Y4WCONbBU",
+        "music_path": "../react-music-player/src/audios/Broken.mp3",
+        "cover_path": "../react-music-player/src/audios/Broken.jpeg"
+    },
+    {
+        "name": "Cauldron",
+        "creator": "1349",
+        "url": "https://www.youtube.com/watch?v=qQ-1oQ20lv8",
+        "music_path": "../react-music-player/src/audios/Cauldron.mp3",
+        "cover_path": "../react-music-player/src/audios/Cauldron.jpeg"
+    },
+    {
+        "name": "Chained",
+        "creator": "1349",
+        "url": "https://www.youtube.com/watch?v=_grhww-jONo",
+        "music_path": "../react-music-player/src/audios/Chained.mp3",
+        "cover_path": "../react-music-player/src/audios/Chained.jpeg"
+    }
+]
