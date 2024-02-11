@@ -1,0 +1,492 @@
+[
+  {
+    "name": "10 Minutes",
+    "creator": "Inna",
+    "url": "https://www.youtube.com/watch?v=oGpo9uwbW1k",
+    "music_path": "./audios/10-Minutes.mp3",
+    "cover_path": "./covers/10-Minutes.jpeg"
+  },
+  {
+    "name": "Love",
+    "creator": "Inna",
+    "url": "https://www.youtube.com/watch?v=04fcgFs-mjA",
+    "music_path": "./audios/Love.mp3",
+    "cover_path": "./covers/Love.jpeg"
+  },
+  {
+    "name": "Dreadlock Holiday",
+    "creator": "10cc",
+    "url": "https://www.youtube.com/watch?v=fUNTk5xsxk4",
+    "music_path": "./audios/Dreadlock-Holiday.mp3",
+    "cover_path": "./covers/Dreadlock-Holiday.jpeg"
+  },
+  {
+    "name": "Im Not in Love",
+    "creator": "10cc",
+    "url": "https://www.youtube.com/watch?v=STugQ0X1NoI",
+    "music_path": "./audios/Im-Not-in-Love.mp3",
+    "cover_path": "./covers/Im-Not-in-Love.jpeg"
+  },
+  {
+    "name": "The Things We Do For Love",
+    "creator": "10cc",
+    "url": "https://www.youtube.com/watch?v=P0rf3_viTxk",
+    "music_path": "./audios/The-Things-We-Do-For-Love.mp3",
+    "cover_path": "./covers/The-Things-We-Do-For-Love.jpeg"
+  },
+  {
+    "name": "Wasteland",
+    "creator": "10 Years",
+    "url": "https://www.youtube.com/watch?v=OPXUeeFXc90",
+    "music_path": "./audios/Wasteland.mp3",
+    "cover_path": "./covers/Wasteland.jpeg"
+  },
+  {
+    "name": "Anthem for the Underdog",
+    "creator": "12 Stones",
+    "url": "https://www.youtube.com/watch?v=a5sSwfF8PFA",
+    "music_path": "./audios/Anthem-for-the-Underdog.mp3",
+    "cover_path": "./covers/Anthem-for-the-Underdog.jpeg"
+  },
+  {
+    "name": "Broken",
+    "creator": "12 Stones",
+    "url": "https://www.youtube.com/watch?v=M1Y4WCONbBU",
+    "music_path": "./audios/Broken.mp3",
+    "cover_path": "./covers/Broken.jpeg"
+  },
+  {
+    "name": "Cauldron",
+    "creator": "1349",
+    "url": "https://www.youtube.com/watch?v=qQ-1oQ20lv8",
+    "music_path": "./audios/Cauldron.mp3",
+    "cover_path": "./covers/Cauldron.jpeg"
+  },
+  {
+    "name": "Chained",
+    "creator": "1349",
+    "url": "https://www.youtube.com/watch?v=_grhww-jONo",
+    "music_path": "./audios/Chained.mp3",
+    "cover_path": "./covers/Chained.jpeg"
+  },
+  {
+    "name": "Exorcism",
+    "creator": "1349",
+    "url": "https://www.youtube.com/watch?v=du0DbIdqAq4",
+    "music_path": "./audios/Exorcism.mp3",
+    "cover_path": "./covers/Exorcism.jpeg"
+  },
+  {
+    "name": "Godslayer",
+    "creator": "1349",
+    "url": "https://www.youtube.com/watch?v=lLdsmwpH4tQ",
+    "music_path": "./audios/Godslayer.mp3",
+    "cover_path": "./covers/Godslayer.jpeg"
+  },
+  {
+    "name": "Golem",
+    "creator": "1349",
+    "url": "https://www.youtube.com/watch?v=JiWjP732E-I",
+    "music_path": "./audios/Golem.mp3",
+    "cover_path": "./covers/Golem.jpeg"
+  },
+  {
+    "name": "Postmortem",
+    "creator": "1349",
+    "url": "https://www.youtube.com/watch?v=lpLtmmcrGRk",
+    "music_path": "./audios/Postmortem.mp3",
+    "cover_path": "./covers/Postmortem.jpeg"
+  },
+  {
+    "name": "Slaves",
+    "creator": "1349",
+    "url": "https://www.youtube.com/watch?v=ajvLJPzgL_o",
+    "music_path": "./audios/Slaves.mp3",
+    "cover_path": "./covers/Slaves.jpeg"
+  },
+  {
+    "name": "Kingdom of Heaven",
+    "creator": "13th Floor Elevators",
+    "url": "https://www.youtube.com/watch?v=E0Z3HAaguSo",
+    "music_path": "./audios/Kingdom-of-Heaven.mp3",
+    "cover_path": "./covers/Kingdom-of-Heaven.jpeg"
+  },
+  {
+    "name": "Roller Coaster",
+    "creator": "13th Floor Elevators",
+    "url": "https://www.youtube.com/watch?v=Lt6sT_nX5Ic",
+    "music_path": "./audios/Roller-Coaster.mp3",
+    "cover_path": "./covers/Roller-Coaster.jpeg"
+  },
+  {
+    "name": "Youre Gonna Miss Me",
+    "creator": "13th Floor Elevators",
+    "url": "https://www.youtube.com/watch?v=StU6KlCYtcI",
+    "music_path": "./audios/Youre-Gonna-Miss-Me.mp3",
+    "cover_path": "./covers/Youre-Gonna-Miss-Me.jpeg"
+  },
+  {
+    "name": "Beat Organ",
+    "creator": "16 Bit Lolitas",
+    "url": "https://www.youtube.com/watch?v=cGIizYKNEbk",
+    "music_path": "./audios/Beat-Organ.mp3",
+    "cover_path": "./covers/Beat-Organ.jpeg"
+  },
+  {
+    "name": "American Wheeze",
+    "creator": "16 Horsepower",
+    "url": "https://www.youtube.com/watch?v=THlgU-8dMYg",
+    "music_path": "./audios/American-Wheeze.mp3",
+    "cover_path": "./covers/American-Wheeze.jpeg"
+  },
+  {
+    "name": "Black Soul Choir",
+    "creator": "16 Horsepower",
+    "url": "https://www.youtube.com/watch?v=f-vpAn15-vE",
+    "music_path": "./audios/Black-Soul-Choir.mp3",
+    "cover_path": "./covers/Black-Soul-Choir.jpeg"
+  },
+  {
+    "name": "Kodama",
+    "creator": "20syl",
+    "url": "https://www.youtube.com/watch?v=Mqbw7CUVWhM",
+    "music_path": "./audios/Kodama.mp3",
+    "cover_path": "./covers/Kodama.jpeg"
+  },
+  {
+    "name": "Eat It",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=ZcJjMnHoIBI",
+    "music_path": "./audios/Eat-It.mp3",
+    "cover_path": "./covers/Eat-It.jpeg"
+  },
+  {
+    "name": "First World Problems",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=bwvlbJ0h35A",
+    "music_path": "./audios/First-World-Problems.mp3",
+    "cover_path": "./covers/First-World-Problems.jpeg"
+  },
+  {
+    "name": "Foil",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=urglg3WimHA",
+    "music_path": "./audios/Foil.mp3",
+    "cover_path": "./covers/Foil.jpeg"
+  },
+  {
+    "name": "Handy",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=eXiwYUCe_bY",
+    "music_path": "./audios/Handy.mp3",
+    "cover_path": "./covers/Handy.jpeg"
+  },
+  {
+    "name": "Inactive",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=5lNG372Jsss",
+    "music_path": "./audios/Inactive.mp3",
+    "cover_path": "./covers/Inactive.jpeg"
+  },
+  {
+    "name": "Lame Claim To Fame",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=o3vBvlT1i_k",
+    "music_path": "./audios/Lame-Claim-To-Fame.mp3",
+    "cover_path": "./covers/Lame-Claim-To-Fame.jpeg"
+  },
+  {
+    "name": "Mission Statement",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=GyV_UG60dD4",
+    "music_path": "./audios/Mission-Statement.mp3",
+    "cover_path": "./covers/Mission-Statement.jpeg"
+  },
+  {
+    "name": "My Own Eyes",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=8PMvU6knXKQ",
+    "music_path": "./audios/My-Own-Eyes.mp3",
+    "cover_path": "./covers/My-Own-Eyes.jpeg"
+  },
+  {
+    "name": "Now Thats What I Call Polka",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=TqKaVDo9cjs",
+    "music_path": "./audios/Now-Thats-What-I-Call-Polka.mp3",
+    "cover_path": "./covers/Now-Thats-What-I-Call-Polka.jpeg"
+  },
+  {
+    "name": "Sports Song",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=XGbqGkS1c2w",
+    "music_path": "./audios/Sports-Song.mp3",
+    "cover_path": "./covers/Sports-Song.jpeg"
+  },
+  {
+    "name": "Tacky",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=zq7Eki5EZ8o",
+    "music_path": "./audios/Tacky.mp3",
+    "cover_path": "./covers/Tacky.jpeg"
+  },
+  {
+    "name": "White",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=N9qYF9DZPdw",
+    "music_path": "./audios/White.mp3",
+    "cover_path": "./covers/White.jpeg"
+  },
+  {
+    "name": "Word Crimes",
+    "creator": "Weird Al Yankovic",
+    "url": "https://www.youtube.com/watch?v=8Gv0H-vPoDc",
+    "music_path": "./audios/Word-Crimes.mp3",
+    "cover_path": "./covers/Word-Crimes.jpeg"
+  },
+  {
+    "name": "Marry Me",
+    "creator": "St Vincent",
+    "url": "https://www.youtube.com/watch?v=UFELzm9MFtA",
+    "music_path": "./audios/Marry-Me.mp3",
+    "cover_path": "./covers/Marry-Me.jpeg"
+  },
+  {
+    "name": "155",
+    "creator": "2B44",
+    "url": "https://www.youtube.com/watch?v=8w0IK9evNAg",
+    "music_path": "./audios/155.mp3",
+    "cover_path": "./covers/155.jpeg"
+  },
+  {
+    "name": "Baby Come On",
+    "creator": "2B44",
+    "url": "https://www.youtube.com/watch?v=6CVzNO71ip8",
+    "music_path": "./audios/Baby-Come-On.mp3",
+    "cover_path": "./covers/Baby-Come-On.jpeg"
+  },
+  {
+    "name": "Make You Smile",
+    "creator": "2B44",
+    "url": "https://www.youtube.com/watch?v=sN65J3O_xdY",
+    "music_path": "./audios/Make-You-Smile.mp3",
+    "cover_path": "./covers/Make-You-Smile.jpeg"
+  },
+  {
+    "name": "When Your Heart Stops Beating",
+    "creator": "2B44",
+    "url": "https://www.youtube.com/watch?v=8w0IK9evNAg",
+    "music_path": "./audios/When-Your-Heart-Stops-Beating.mp3",
+    "cover_path": "./covers/When-Your-Heart-Stops-Beating.jpeg"
+  },
+  {
+    "name": "Blindfold",
+    "creator": "254",
+    "url": "https://www.youtube.com/watch?v=O7Sa9_TxtB8",
+    "music_path": "./audios/Blindfold.mp3",
+    "cover_path": "./covers/Blindfold.jpeg"
+  },
+  {
+    "name": "Orion",
+    "creator": "254",
+    "url": "https://www.youtube.com/watch?v=cQ7_v1w20I0",
+    "music_path": "./audios/Orion.mp3",
+    "cover_path": "./covers/Orion.jpeg"
+  },
+  {
+    "name": "Revolving",
+    "creator": "254",
+    "url": "https://www.youtube.com/watch?v=WL21PPhLx4M",
+    "music_path": "./audios/Revolving.mp3",
+    "cover_path": "./covers/Revolving.jpeg"
+  },
+  {
+    "name": "Scarlet",
+    "creator": "254",
+    "url": "https://www.youtube.com/watch?v=VGH7bKlABIc",
+    "music_path": "./audios/Scarlet.mp3",
+    "cover_path": "./covers/Scarlet.jpeg"
+  },
+  {
+    "name": "Sugar",
+    "creator": "254",
+    "url": "https://www.youtube.com/watch?v=_LvgRz92gUg",
+    "music_path": "./audios/Sugar.mp3",
+    "cover_path": "./covers/Sugar.jpeg"
+  },
+  {
+    "name": "Youre Early",
+    "creator": "254",
+    "url": "https://www.youtube.com/watch?v=kdcHeIxRWK0",
+    "music_path": "./audios/Youre-Early.mp3",
+    "cover_path": "./covers/Youre-Early.jpeg"
+  },
+  {
+    "name": "Baby du riechst",
+    "creator": "257ers",
+    "url": "https://www.youtube.com/watch?v=X79-bdcGCJU",
+    "music_path": "./audios/Baby-du-riechst.mp3",
+    "cover_path": "./covers/Baby-du-riechst.jpeg"
+  },
+  {
+    "name": "Warum",
+    "creator": "257ers",
+    "url": "https://www.youtube.com/watch?v=pUYxqcBw0gA",
+    "music_path": "./audios/Warum.mp3",
+    "cover_path": "./covers/Warum.jpeg"
+  },
+  {
+    "name": "Bye Bye Bye",
+    "creator": "NSYNC",
+    "url": "https://www.youtube.com/watch?v=Eo-KmOd3i7s",
+    "music_path": "./audios/Bye-Bye-Bye.mp3",
+    "cover_path": "./covers/Bye-Bye-Bye.jpeg"
+  },
+  {
+    "name": "Voices Carry",
+    "creator": "Til Tuesday",
+    "url": "https://www.youtube.com/watch?v=uejh-bHa4To",
+    "music_path": "./audios/Voices-Carry.mp3",
+    "cover_path": "./covers/Voices-Carry.jpeg"
+  },
+  {
+    "name": "Birthday Song",
+    "creator": "2 Chainz",
+    "url": "https://www.youtube.com/watch?v=Y34jC4I1m70",
+    "music_path": "./audios/Birthday-Song.mp3",
+    "cover_path": "./covers/Birthday-Song.jpeg"
+  },
+  {
+    "name": "Feds Watching",
+    "creator": "2 Chainz",
+    "url": "https://www.youtube.com/watch?v=NttlPwNKd_M",
+    "music_path": "./audios/Feds-Watching.mp3",
+    "cover_path": "./covers/Feds-Watching.jpeg"
+  },
+  {
+    "name": "Fork",
+    "creator": "2 Chainz",
+    "url": "https://www.youtube.com/watch?v=jVhMt26F7gA",
+    "music_path": "./audios/Fork.mp3",
+    "cover_path": "./covers/Fork.jpeg"
+  },
+  {
+    "name": "Im Different",
+    "creator": "2 Chainz",
+    "url": "https://www.youtube.com/watch?v=e2QKlmMT8II",
+    "music_path": "./audios/Im-Different.mp3",
+    "cover_path": "./covers/Im-Different.jpeg"
+  },
+  {
+    "name": "No Lie",
+    "creator": "2 Chainz",
+    "url": "https://www.youtube.com/watch?v=uQZMaG1eO74",
+    "music_path": "./audios/No-Lie.mp3",
+    "cover_path": "./covers/No-Lie.jpeg"
+  },
+  {
+    "name": "We Own It fast",
+    "creator": "2 Chainz",
+    "url": "https://www.youtube.com/watch?v=tYQ1Okyi3g4",
+    "music_path": "./audios/We-Own-It-fast.mp3",
+    "cover_path": "./covers/We-Own-It-fast.jpeg"
+  },
+  {
+    "name": "Baby I Miss You",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=MZIhBWnEfZ0",
+    "music_path": "./audios/Baby-I-Miss-You.mp3",
+    "cover_path": "./covers/Baby-I-Miss-You.jpeg"
+  },
+  {
+    "name": "Cant Nobody",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=Ihi_kJJj_8A",
+    "music_path": "./audios/Cant-Nobody.mp3",
+    "cover_path": "./covers/Cant-Nobody.jpeg"
+  },
+  {
+    "name": "Come Back Home",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=vLbfv-AAyvQ",
+    "music_path": "./audios/Come-Back-Home.mp3",
+    "cover_path": "./covers/Come-Back-Home.jpeg"
+  },
+  {
+    "name": "COME BACK HOME Unplugged Ver",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=WgrwFFvmD4Q",
+    "music_path": "./audios/COME-BACK-HOME-Unplugged-Ver.mp3",
+    "cover_path": "./covers/COME-BACK-HOME-Unplugged-Ver.jpeg"
+  },
+  {
+    "name": "Crush",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=IHb9FXfz8X8",
+    "music_path": "./audios/Crush.mp3",
+    "cover_path": "./covers/Crush.jpeg"
+  },
+  {
+    "name": "Do You Love Me",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=HRTb81FpWq0",
+    "music_path": "./audios/Do-You-Love-Me.mp3",
+    "cover_path": "./covers/Do-You-Love-Me.jpeg"
+  },
+  {
+    "name": "\ub108 \uc544\ub2d8 \uc548\ub3fc",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=zAgZQWA_GLs",
+    "music_path": "./audios/\ub108-\uc544\ub2d8-\uc548\ub3fc.mp3",
+    "cover_path": "./covers/\ub108-\uc544\ub2d8-\uc548\ub3fc.jpeg"
+  },
+  {
+    "name": "\ub108 \uc544\ub2d8 \uc548\ub3fc Gotta Be You",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=zdKTgwffmdo",
+    "music_path": "./audios/\ub108-\uc544\ub2d8-\uc548\ub3fc-Gotta-Be-You.mp3",
+    "cover_path": "./covers/\ub108-\uc544\ub2d8-\uc548\ub3fc-Gotta-Be-You.jpeg"
+  },
+  {
+    "name": "\uba58\ubd95 CL Solo",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=_8LnzDTaCDk",
+    "music_path": "./audios/\uba58\ubd95-CL-Solo.mp3",
+    "cover_path": "./covers/\uba58\ubd95-CL-Solo.jpeg"
+  },
+  {
+    "name": "\uba58\ubd95 MTBD CL SOLO",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=_8LnzDTaCDk",
+    "music_path": "./audios/\uba58\ubd95-MTBD-CL-SOLO.mp3",
+    "cover_path": "./covers/\uba58\ubd95-MTBD-CL-SOLO.jpeg"
+  },
+  {
+    "name": "\uc0b4\uc544 \ubd24\uc73c\uba74 \ud574",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=T0CScxTL904",
+    "music_path": "./audios/\uc0b4\uc544-\ubd24\uc73c\uba74-\ud574.mp3",
+    "cover_path": "./covers/\uc0b4\uc544-\ubd24\uc73c\uba74-\ud574.jpeg"
+  },
+  {
+    "name": "\ucc29\ud55c \uc5ec\uc790",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=22lFSVn-E3o",
+    "music_path": "./audios/\ucc29\ud55c-\uc5ec\uc790.mp3",
+    "cover_path": "./covers/\ucc29\ud55c-\uc5ec\uc790.jpeg"
+  },
+  {
+    "name": "Falling in Love",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=zEVd9pSG85Q",
+    "music_path": "./audios/Falling-in-Love.mp3",
+    "cover_path": "./covers/Falling-in-Love.jpeg"
+  },
+  {
+    "name": "Fire",
+    "creator": "2NE1",
+    "url": "https://www.youtube.com/watch?v=49AfuuRbgGo",
+    "music_path": "./audios/Fire.mp3",
+    "cover_path": "./covers/Fire.jpeg"
+  }
+]
