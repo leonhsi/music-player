@@ -1,20 +1,30 @@
 package main
 
 import (
-  "net/http"
   "log"
-  "github.com/leonhsi/music-player/db/sqlc"
+  "database/sql"
+
+  "github.com/leonhsi/music-player/api"
+  db "github.com/leonhsi/music-player/db/sqlc"
+  "github.com/leonhsi/music-player/utils"
+  _ "github.com/lib/pq"
 )
 
 func main() {
+  config, err := utils.LoadConfig(".")
+  if err != nil {
+    log.Fatal("cannot load config:", err)
+  }
 
-  http.HandleFunc("/", func(http.ResponseWriter, *http.Request) {
-    log.Println("Hello World")
-  }) 
+  conn, err := sql.Open(config.DBDriver, config.DBSource)
+  if err != nil {
+    log.Fatal("cannot connect to db:", err)
+  }
 
-  http.HandleFunc("/goodbye", func(http.ResponseWriter, *http.Request) {
-    log.Println("Goodbye World")
-  }) 
+  store := db.NewStore(conn)
+  server := api.NewServer(store)
 
-  http.ListenAndServe(":1111", nil)
+  utils.InitDB(store);
+
+  err = server.Start(config.ServerAddress)
 }
