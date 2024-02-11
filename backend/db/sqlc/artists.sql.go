@@ -3,7 +3,7 @@
 //   sqlc v1.25.0
 // source: artists.sql
 
-package sqlc
+package db
 
 import (
 	"context"
@@ -19,7 +19,7 @@ RETURNING artist_id, artist_name
 `
 
 func (q *Queries) CreateArtist(ctx context.Context, artistName string) (Artist, error) {
-	row := q.db.QueryRow(ctx, createArtist, artistName)
+	row := q.db.QueryRowContext(ctx, createArtist, artistName)
 	var i Artist
 	err := row.Scan(&i.ArtistID, &i.ArtistName)
 	return i, err
@@ -31,17 +31,17 @@ WHERE artist_id = $1
 `
 
 func (q *Queries) DeleteArtist(ctx context.Context, artistID int64) error {
-	_, err := q.db.Exec(ctx, deleteArtist, artistID)
+	_, err := q.db.ExecContext(ctx, deleteArtist, artistID)
 	return err
 }
 
 const getArtist = `-- name: GetArtist :one
 SELECT artist_id, artist_name FROM artists
-WHERE artist_id = $1 LIMIT 1
+WHERE artist_name = $1 LIMIT 1
 `
 
-func (q *Queries) GetArtist(ctx context.Context, artistID int64) (Artist, error) {
-	row := q.db.QueryRow(ctx, getArtist, artistID)
+func (q *Queries) GetArtist(ctx context.Context, artistName string) (Artist, error) {
+	row := q.db.QueryRowContext(ctx, getArtist, artistName)
 	var i Artist
 	err := row.Scan(&i.ArtistID, &i.ArtistName)
 	return i, err
@@ -53,7 +53,7 @@ ORDER BY artist_id LIMIT $1
 `
 
 func (q *Queries) ListArtists(ctx context.Context, limit int32) ([]Artist, error) {
-	rows, err := q.db.Query(ctx, listArtists, limit)
+	rows, err := q.db.QueryContext(ctx, listArtists, limit)
 	if err != nil {
 		return nil, err
 	}
@@ -65,6 +65,9 @@ func (q *Queries) ListArtists(ctx context.Context, limit int32) ([]Artist, error
 			return nil, err
 		}
 		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
 	}
 	if err := rows.Err(); err != nil {
 		return nil, err
@@ -85,7 +88,7 @@ type UpdateArtistParams struct {
 }
 
 func (q *Queries) UpdateArtist(ctx context.Context, arg UpdateArtistParams) (Artist, error) {
-	row := q.db.QueryRow(ctx, updateArtist, arg.ArtistID, arg.ArtistName)
+	row := q.db.QueryRowContext(ctx, updateArtist, arg.ArtistID, arg.ArtistName)
 	var i Artist
 	err := row.Scan(&i.ArtistID, &i.ArtistName)
 	return i, err

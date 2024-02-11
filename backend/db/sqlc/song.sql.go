@@ -3,7 +3,7 @@
 //   sqlc v1.25.0
 // source: song.sql
 
-package sqlc
+package db
 
 import (
 	"context"
@@ -11,24 +11,26 @@ import (
 
 const createSong = `-- name: CreateSong :one
 INSERT INTO songs (
-  song_name, artist_id, thumbnail_s3_path, mp3_s3_path
+  song_name, artist_id, artist_name, thumbnail_s3_path, mp3_s3_path
 ) VALUES (
-  $1, $2, $3, $4
+  $1, $2, $3, $4, $5
 )
-RETURNING song_id, song_name, artist_id, thumbnail_s3_path, mp3_s3_path
+RETURNING song_id, song_name, artist_id, artist_name, thumbnail_s3_path, mp3_s3_path
 `
 
 type CreateSongParams struct {
 	SongName        string `json:"song_name"`
 	ArtistID        int64  `json:"artist_id"`
+	ArtistName      string `json:"artist_name"`
 	ThumbnailS3Path string `json:"thumbnail_s3_path"`
 	Mp3S3Path       string `json:"mp3_s3_path"`
 }
 
 func (q *Queries) CreateSong(ctx context.Context, arg CreateSongParams) (Song, error) {
-	row := q.db.QueryRow(ctx, createSong,
+	row := q.db.QueryRowContext(ctx, createSong,
 		arg.SongName,
 		arg.ArtistID,
+		arg.ArtistName,
 		arg.ThumbnailS3Path,
 		arg.Mp3S3Path,
 	)
@@ -37,6 +39,7 @@ func (q *Queries) CreateSong(ctx context.Context, arg CreateSongParams) (Song, e
 		&i.SongID,
 		&i.SongName,
 		&i.ArtistID,
+		&i.ArtistName,
 		&i.ThumbnailS3Path,
 		&i.Mp3S3Path,
 	)
@@ -49,22 +52,23 @@ WHERE song_id = $1
 `
 
 func (q *Queries) DeleteSong(ctx context.Context, songID int64) error {
-	_, err := q.db.Exec(ctx, deleteSong, songID)
+	_, err := q.db.ExecContext(ctx, deleteSong, songID)
 	return err
 }
 
 const getSong = `-- name: GetSong :one
-SELECT song_id, song_name, artist_id, thumbnail_s3_path, mp3_s3_path FROM songs
-WHERE song_id = $1 LIMIT 1
+SELECT song_id, song_name, artist_id, artist_name, thumbnail_s3_path, mp3_s3_path FROM songs
+WHERE song_name = $1 LIMIT 1
 `
 
-func (q *Queries) GetSong(ctx context.Context, songID int64) (Song, error) {
-	row := q.db.QueryRow(ctx, getSong, songID)
+func (q *Queries) GetSong(ctx context.Context, songName string) (Song, error) {
+	row := q.db.QueryRowContext(ctx, getSong, songName)
 	var i Song
 	err := row.Scan(
 		&i.SongID,
 		&i.SongName,
 		&i.ArtistID,
+		&i.ArtistName,
 		&i.ThumbnailS3Path,
 		&i.Mp3S3Path,
 	)
@@ -72,12 +76,12 @@ func (q *Queries) GetSong(ctx context.Context, songID int64) (Song, error) {
 }
 
 const listSongs = `-- name: ListSongs :many
-SELECT song_id, song_name, artist_id, thumbnail_s3_path, mp3_s3_path FROM songs
+SELECT song_id, song_name, artist_id, artist_name, thumbnail_s3_path, mp3_s3_path FROM songs
 ORDER BY song_id LIMIT $1
 `
 
 func (q *Queries) ListSongs(ctx context.Context, limit int32) ([]Song, error) {
-	rows, err := q.db.Query(ctx, listSongs, limit)
+	rows, err := q.db.QueryContext(ctx, listSongs, limit)
 	if err != nil {
 		return nil, err
 	}
@@ -89,12 +93,16 @@ func (q *Queries) ListSongs(ctx context.Context, limit int32) ([]Song, error) {
 			&i.SongID,
 			&i.SongName,
 			&i.ArtistID,
+			&i.ArtistName,
 			&i.ThumbnailS3Path,
 			&i.Mp3S3Path,
 		); err != nil {
 			return nil, err
 		}
 		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
 	}
 	if err := rows.Err(); err != nil {
 		return nil, err
@@ -109,7 +117,7 @@ UPDATE songs
   thumbnail_s3_path = $4,
   mp3_s3_path = $5
 WHERE song_id = $1
-RETURNING song_id, song_name, artist_id, thumbnail_s3_path, mp3_s3_path
+RETURNING song_id, song_name, artist_id, artist_name, thumbnail_s3_path, mp3_s3_path
 `
 
 type UpdateSongParams struct {
@@ -121,7 +129,7 @@ type UpdateSongParams struct {
 }
 
 func (q *Queries) UpdateSong(ctx context.Context, arg UpdateSongParams) (Song, error) {
-	row := q.db.QueryRow(ctx, updateSong,
+	row := q.db.QueryRowContext(ctx, updateSong,
 		arg.SongID,
 		arg.SongName,
 		arg.ArtistID,
@@ -133,6 +141,7 @@ func (q *Queries) UpdateSong(ctx context.Context, arg UpdateSongParams) (Song, e
 		&i.SongID,
 		&i.SongName,
 		&i.ArtistID,
+		&i.ArtistName,
 		&i.ThumbnailS3Path,
 		&i.Mp3S3Path,
 	)

@@ -1,6 +1,6 @@
 -- name: GetArtist :one
 SELECT * FROM artists
-WHERE artist_id = $1 LIMIT 1;
+WHERE artist_name = $1 LIMIT 1;
 
 -- name: ListArtists :many
 SELECT * FROM artists 

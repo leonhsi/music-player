@@ -2,10 +2,10 @@
 // versions:
 //   sqlc v1.25.0
 
-package sqlc
+package db
 
 import (
-	"github.com/jackc/pgx/v5/pgtype"
+	"database/sql"
 )
 
 type Artist struct {
@@ -17,16 +17,17 @@ type Song struct {
 	SongID          int64  `json:"song_id"`
 	SongName        string `json:"song_name"`
 	ArtistID        int64  `json:"artist_id"`
+	ArtistName      string `json:"artist_name"`
 	ThumbnailS3Path string `json:"thumbnail_s3_path"`
 	Mp3S3Path       string `json:"mp3_s3_path"`
 }
 
 type User struct {
-	UserID      int64              `json:"user_id"`
-	UserName    string             `json:"user_name"`
-	FirstName   string             `json:"first_name"`
-	LastName    string             `json:"last_name"`
-	DataOfBirth pgtype.Timestamptz `json:"data_of_birth"`
-	LastLogin   pgtype.Timestamptz `json:"last_login"`
-	CreatedAt   pgtype.Timestamptz `json:"created_at"`
+	UserID      int64        `json:"user_id"`
+	UserName    string       `json:"user_name"`
+	FirstName   string       `json:"first_name"`
+	LastName    string       `json:"last_name"`
+	DataOfBirth sql.NullTime `json:"data_of_birth"`
+	LastLogin   sql.NullTime `json:"last_login"`
+	CreatedAt   sql.NullTime `json:"created_at"`
 }

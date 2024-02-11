@@ -2,7 +2,7 @@
 // versions:
 //   sqlc v1.25.0
 
-package sqlc
+package db
 
 import (
 	"context"
@@ -13,8 +13,8 @@ type Querier interface {
 	CreateSong(ctx context.Context, arg CreateSongParams) (Song, error)
 	DeleteArtist(ctx context.Context, artistID int64) error
 	DeleteSong(ctx context.Context, songID int64) error
-	GetArtist(ctx context.Context, artistID int64) (Artist, error)
-	GetSong(ctx context.Context, songID int64) (Song, error)
+	GetArtist(ctx context.Context, artistName string) (Artist, error)
+	GetSong(ctx context.Context, songName string) (Song, error)
 	ListArtists(ctx context.Context, limit int32) ([]Artist, error)
 	ListSongs(ctx context.Context, limit int32) ([]Song, error)
 	UpdateArtist(ctx context.Context, arg UpdateArtistParams) (Artist, error)

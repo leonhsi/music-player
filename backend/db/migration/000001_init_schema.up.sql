@@ -2,6 +2,7 @@ CREATE TABLE "songs" (
   "song_id" bigserial PRIMARY KEY,
   "song_name" varchar NOT NULL,
   "artist_id" bigint NOT NULL,
+  "artist_name" varchar NOT NULL, 
   "thumbnail_s3_path" varchar NOT NULL,
   "mp3_s3_path" varchar NOT NULL
 );
