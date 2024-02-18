@@ -56,13 +56,32 @@ func (q *Queries) DeleteSong(ctx context.Context, songID int64) error {
 	return err
 }
 
-const getSong = `-- name: GetSong :one
+const getSongByID = `-- name: GetSongByID :one
+SELECT song_id, song_name, artist_id, artist_name, thumbnail_s3_path, mp3_s3_path FROM songs
+WHERE song_id = $1 LIMIT 1
+`
+
+func (q *Queries) GetSongByID(ctx context.Context, songID int64) (Song, error) {
+	row := q.db.QueryRowContext(ctx, getSongByID, songID)
+	var i Song
+	err := row.Scan(
+		&i.SongID,
+		&i.SongName,
+		&i.ArtistID,
+		&i.ArtistName,
+		&i.ThumbnailS3Path,
+		&i.Mp3S3Path,
+	)
+	return i, err
+}
+
+const getSongByName = `-- name: GetSongByName :one
 SELECT song_id, song_name, artist_id, artist_name, thumbnail_s3_path, mp3_s3_path FROM songs
 WHERE song_name = $1 LIMIT 1
 `
 
-func (q *Queries) GetSong(ctx context.Context, songName string) (Song, error) {
-	row := q.db.QueryRowContext(ctx, getSong, songName)
+func (q *Queries) GetSongByName(ctx context.Context, songName string) (Song, error) {
+	row := q.db.QueryRowContext(ctx, getSongByName, songName)
 	var i Song
 	err := row.Scan(
 		&i.SongID,

@@ -14,7 +14,8 @@ type Querier interface {
 	DeleteArtist(ctx context.Context, artistID int64) error
 	DeleteSong(ctx context.Context, songID int64) error
 	GetArtist(ctx context.Context, artistName string) (Artist, error)
-	GetSong(ctx context.Context, songName string) (Song, error)
+	GetSongByID(ctx context.Context, songID int64) (Song, error)
+	GetSongByName(ctx context.Context, songName string) (Song, error)
 	ListArtists(ctx context.Context, limit int32) ([]Artist, error)
 	ListSongs(ctx context.Context, limit int32) ([]Song, error)
 	UpdateArtist(ctx context.Context, arg UpdateArtistParams) (Artist, error)

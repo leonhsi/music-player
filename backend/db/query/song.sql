@@ -6,9 +6,13 @@ INSERT INTO songs (
 )
 RETURNING *;
 
--- name: GetSong :one
+-- name: GetSongByName :one
 SELECT * FROM songs
 WHERE song_name = $1 LIMIT 1;
+
+-- name: GetSongByID :one
+SELECT * FROM songs
+WHERE song_id = $1 LIMIT 1;
 
 -- name: ListSongs :many
 SELECT * FROM songs
