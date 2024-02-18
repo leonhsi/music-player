@@ -4,6 +4,7 @@ import json
 import requests
 import ssl
 import string
+import os
 from pytube import YouTube
 from tqdm import tqdm
 
@@ -62,7 +63,21 @@ if __name__ == "__main__":
     img_download_path = '../frontend/src/covers/'
     metadata_path = '../backend/'
     track_limit = 70
+    mkdir_mode = 0o666
+
+    # create download directories
+    try:
+        os.mkdir(mp3_download_path, mkdir_mode)
+        print(mp3_download_path, "created!")
+    except OSError as error:
+        print(mp3_download_path, "is already created!")
     
+    try:
+        os.mkdir(img_download_path, mkdir_mode)
+        print(img_download_path, "created!")
+    except OSError as error:
+        print(img_download_path, "is already created!")
+
     # parse data from csv file
     csv_data = read_csv_file(file_path)
     song_data = read_csv_data(csv_data, track_limit)
