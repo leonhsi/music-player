@@ -22,6 +22,13 @@ function App() {
     var nextIndex = (currentIndex + 1) % audioLength;
     setCurrentIndex(nextIndex);
     setCurrentSong(audios[nextIndex]);
+    const resp = fetch("http://localhost:8080/songs/id/${nextIndex}", {
+      method: "GET",
+    }).catch((err) => {
+      console.log(err);
+    });
+    const data = resp.json();
+    console.log(data);
   };
 
   const prevSong = () => {
@@ -29,6 +36,15 @@ function App() {
     setCurrentIndex(prevIndex);
     setCurrentSong(audios[prevIndex]);
   };
+
+  const handleClick = () => {
+    fetch("http://localhost:1111/goodbye", { method: "GET" })
+      .then((res) => res.json())
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   return (
     <>
       <div className="player-main">
@@ -38,6 +54,7 @@ function App() {
           nextSong={nextSong}
           prevSong={prevSong}
         />
+        <button onClick={handleClick}>Button</button>
       </div>
     </>
   );
