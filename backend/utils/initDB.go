@@ -13,10 +13,12 @@ import (
 type SongMetadata struct {
   Name string `json:"name"`
   Creator string `json:"creator"`
+  Mp3S3Path string `json:"music_path"`
+  ThumbnailS3Path string `json:"cover_path"`
 }
 
 func InitDB(store db.Store) {
-  fmt.Println("[DEBUG] Start initialize song metadata DB...")
+  fmt.Println("[music-player] Start writing song metadata to DB...")
 
   jsonFile, err := os.Open("./metadata.json")
   if err != nil {
@@ -45,15 +47,15 @@ func InitDB(store db.Store) {
     }
     
     // check if song exist
-    _, err = store.GetSong(context.Background(), songs[i].Name) 
+    _, err = store.GetSongByName(context.Background(), songs[i].Name) 
     if err != nil {
       // create songs
       arg := db.CreateSongParams{
         SongName: songs[i].Name,
         ArtistID: artist.ArtistID,      
         ArtistName: artist.ArtistName,
-        ThumbnailS3Path: "",
-        Mp3S3Path: "",
+        ThumbnailS3Path: songs[i].ThumbnailS3Path,
+        Mp3S3Path: songs[i].Mp3S3Path,
       }
       _, err = store.CreateSong(context.Background(), arg)
       if err != nil {
@@ -62,5 +64,5 @@ func InitDB(store db.Store) {
     }
   }
   
-  fmt.Println("[DEBUG] Finish initialization of", len(songs), "songs")
+  fmt.Println("[music-player] Finish writing of", len(songs), "songs")
 }
