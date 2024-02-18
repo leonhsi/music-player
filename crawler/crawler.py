@@ -58,9 +58,9 @@ def song_to_dict(song):
 
 if __name__ == "__main__":
     file_path = 'tracks.csv'
-    mp3_download_path = '../react-music-player/src/audios/'
-    img_download_path = '../react-music-player/src/covers/'
-    metadata_path = '../react-music-player/src/'
+    mp3_download_path = '../frontend/src/audios/'
+    img_download_path = '../frontend/src/covers/'
+    metadata_path = '../backend/'
     track_limit = 70
     
     # parse data from csv file
