@@ -34,7 +34,7 @@ npm start
 
 Then the music player would show on `http://localhost:3000`:
 
-![image](https://hackmd.io/_uploads/Bkw-Ht136.png)
+![image](./doc/music-player.png)
 
 
 ### Backend
@@ -74,7 +74,7 @@ make migratedown
 ```
 The schema:
 
-![image](https://hackmd.io/_uploads/SysxuYyn6.png)
+![image](./doc/db-diagram.png)
 
 Generate golang code to manipulate database using sqlc:
 ```
@@ -86,7 +86,7 @@ Run the service on port 8080:
 make run
 ```
 
-![image](https://hackmd.io/_uploads/S1o7sKkha.png)
+![image](./doc/make-run.png)
 
 
 #### TablePlus
@@ -95,21 +95,21 @@ We can use TablePlus to view our database.
 open TablePlus, connect to the postgres container
 (password is 123 according to the `make postgres` command)
 
-![image](https://hackmd.io/_uploads/By-NFY12p.png)
+![image](./doc/tableplus-connection.png)
 
 
 after running `make createdb` command, the music-player database is created.
 click the upper left icon, choose music-player database
 
-![image](https://hackmd.io/_uploads/HkPsFFkhp.png)
+![image](./doc/tableplus-database.png)
 
 after running `make migrateup` command, the tables are created, it should be empty:
 (We could clean the tables by `make migratedown`)
-![image](https://hackmd.io/_uploads/Syov5t1na.png)
+![image](./doc/tableplus-schema.png)
 
 after running `make run` command, the initial data is written to the tables:
 
-![image](https://hackmd.io/_uploads/HkIncYk3p.png)
+![image](./doc/tableplus-data.png)
 
 #### Postman
 
@@ -133,16 +133,16 @@ Let's say I want to get the metadata of song `10 Minute`:
 select `GET` method, and type `http://localhost:8080/songs/name/10%20Minute`:
 (`%20` denotes a space)
 
-![image](https://hackmd.io/_uploads/SJFYpYJ26.png)
+![image](./doc/postman-request.png)
 
 Send the request, and we should get the correct response from server:
 
-![image](https://hackmd.io/_uploads/HJKzAtkhp.png)
+![image](./doc/postman-response.png)
 
 The server would show that it receive a HTTP request, successfully handled it and return status which 200 means OK:
 
-![image](https://hackmd.io/_uploads/S1jo0Y1np.png)
+![image](./doc/postman-server.png)
 
 If we want to list songs, add params in the request (for example, list 3 songs):
 
-![image](https://hackmd.io/_uploads/Sk-Z1cyh6.png)
+![image](./doc/postman-listsong.png)
