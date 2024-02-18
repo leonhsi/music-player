@@ -51,12 +51,12 @@ func (server *Server) createSong(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, song)
 }
 
-type getSongRequest struct {
+type getSongByNameRequest struct {
   SongName string `uri:"name" binding:"required"`
 }
 
-func (server *Server) getSong(ctx *gin.Context) {
-	var req getSongRequest
+func (server *Server) getSongByName(ctx *gin.Context) {
+	var req getSongByNameRequest
 	if err := ctx.ShouldBindUri(&req); err != nil {
 		ctx.JSON(http.StatusBadRequest, errorResponse(err))
 		return
@@ -64,7 +64,33 @@ func (server *Server) getSong(ctx *gin.Context) {
 
   arg := req.SongName
 
-	song, err := server.store.GetSong(ctx, arg)
+	song, err := server.store.GetSongByName(ctx, arg)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			ctx.JSON(http.StatusNotFound, errorResponse(err))
+			return
+		}
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
+
+	ctx.JSON(http.StatusOK, song)
+}
+
+type getSongByIDRequest struct {
+  SongID int64 `uri:"id" binding:"required"`
+}
+
+func (server *Server) getSongByID(ctx *gin.Context) {
+	var req getSongByIDRequest
+	if err := ctx.ShouldBindUri(&req); err != nil {
+		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
+	}
+
+  arg := req.SongID
+
+	song, err := server.store.GetSongByID(ctx, arg)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			ctx.JSON(http.StatusNotFound, errorResponse(err))
