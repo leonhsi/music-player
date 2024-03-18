@@ -25,6 +25,7 @@ func NewServer(store db.Store) *Server {
   router.POST("/songs", server.createSong)
   router.GET("/songs/name/:name", server.getSongByName)
   router.GET("/songs/id/:id", server.getSongByID)
+  router.GET("/songs/count/", server.getSongCount)
   router.GET("/songs/", server.listSongs)
 
   router.POST("/artists", server.createArtist)
