@@ -94,6 +94,17 @@ func (q *Queries) GetSongByName(ctx context.Context, songName string) (Song, err
 	return i, err
 }
 
+const getSongCount = `-- name: GetSongCount :one
+SELECT count(*) FROM songs
+`
+
+func (q *Queries) GetSongCount(ctx context.Context) (int64, error) {
+	row := q.db.QueryRowContext(ctx, getSongCount)
+	var count int64
+	err := row.Scan(&count)
+	return count, err
+}
+
 const listSongs = `-- name: ListSongs :many
 SELECT song_id, song_name, artist_id, artist_name, thumbnail_s3_path, mp3_s3_path FROM songs
 ORDER BY song_id LIMIT $1

@@ -1,34 +1,86 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-// import AudioFiles from "./components/AudioFiles";
 import Player from "./components/Player";
-import metadataJson from "./metadata.json";
 
-const audios = JSON.parse(JSON.stringify(metadataJson));
+const songMetaDataService = "http://localhost:8080/songs/";
 
-for (var audio of audios) {
-  audio.name = decodeURIComponent(audio.name);
-  audio.music = require(`${audio.music_path}`);
-  audio.cover = require(`${audio.cover_path}`);
+function getSongCount() {
+  return new Promise((resolve, reject) => {
+    var url = songMetaDataService + "count/";
+    fetch(url, { method: "GET" })
+      .then((response) => response.json())
+      .then((json) => {
+        resolve(json);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+}
+
+function getSongMetaDataByID(id) {
+  return new Promise((resolve, reject) => {
+    var song = {};
+    var url = songMetaDataService + "id/" + id;
+
+    fetch(url, { method: "GET" })
+      .then((response) => response.json())
+      .then((json) => {
+        song.song_name = json.song_name;
+        song.artist_name = json.artist_name;
+        song.cover = require(`${json.thumbnail_s3_path}`);
+        song.music = require(`${json.mp3_s3_path}`);
+        resolve(song);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
 }
 
 function App() {
-  const songs = audios;
-  const audioLength = audios.length;
+  var audioLength = getSongCount().then((songCount) => {
+    audioLength = songCount;
+  });
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentSong, setCurrentSong] = useState(songs[0]);
+  const [currentSong, setCurrentSong] = useState({});
 
   const nextSong = () => {
     var nextIndex = (currentIndex + 1) % audioLength;
     setCurrentIndex(nextIndex);
-    setCurrentSong(audios[nextIndex]);
+
+    getSongMetaDataByID(nextIndex + 1)
+      .then((song) => {
+        setCurrentSong(song);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   const prevSong = () => {
     var prevIndex = (currentIndex + audioLength - 1) % audioLength;
     setCurrentIndex(prevIndex);
-    setCurrentSong(audios[prevIndex]);
+
+    getSongMetaDataByID(prevIndex + 1)
+      .then((song) => {
+        setCurrentSong(song);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
+
+  useEffect(() => {
+    getSongMetaDataByID(1)
+      .then((song) => {
+        setCurrentSong(song);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
   return (
     <>
       <div className="player-main">

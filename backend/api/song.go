@@ -51,6 +51,25 @@ func (server *Server) createSong(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, song)
 }
 
+func (server *Server) getSongCount(ctx *gin.Context) {
+	if err := ctx.ShouldBindUri(nil); err != nil {
+		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
+	}
+
+	count, err := server.store.GetSongCount(ctx)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			ctx.JSON(http.StatusNotFound, errorResponse(err))
+			return
+		}
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
+
+	ctx.JSON(http.StatusOK, count)
+}
+
 type getSongByNameRequest struct {
   SongName string `uri:"name" binding:"required"`
 }

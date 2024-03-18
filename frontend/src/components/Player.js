@@ -35,8 +35,8 @@ export default function Player({
         </div>
         {currentSong ? (
           <div>
-            <h1 className="activeSong-name">{currentSong.name}</h1>
-            <h2 className="activeArtist-name">{currentSong.creator}</h2>
+            <h1 className="activeSong-name">{currentSong.song_name}</h1>
+            <h2 className="activeArtist-name">{currentSong.artist_name}</h2>
           </div>
         ) : (
           ""

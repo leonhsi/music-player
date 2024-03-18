@@ -30,3 +30,6 @@ RETURNING *;
 -- name: DeleteSong :exec
 DELETE FROM songs
 WHERE song_id = $1;
+
+-- name: GetSongCount :one
+SELECT count(*) FROM songs;
