@@ -3,6 +3,7 @@ package api
 import (
 	"github.com/gin-gonic/gin"
 	db "github.com/leonhsi/music-player/db/sqlc"
+  "github.com/gin-contrib/cors"
 )
 
 // Server serves HTTP requests fro our banking service
@@ -15,6 +16,11 @@ type Server struct {
 func NewServer(store db.Store) *Server {
 	server := &Server{store: store}
 	router := gin.Default()
+
+  // setup CORS
+  corsConfig := cors.DefaultConfig()
+  corsConfig.AllowOrigins = []string{"http://localhost:3000"}
+  router.Use(cors.New(corsConfig))
 
   router.POST("/songs", server.createSong)
   router.GET("/songs/name/:name", server.getSongByName)
