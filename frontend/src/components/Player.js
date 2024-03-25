@@ -21,12 +21,13 @@ export default function Player({
   const [currentTime, setCurrentTime] = useState(0); 
   
   useEffect(() => {
-    const audioElement = audioRef.current
+    const audioElement = audioRef.current;
     if (isPlaying) {
       audioElement.play();
     } else {
       audioElement.pause();
     }
+    // get audio currentTime change event and update the value
     const updateTime = () => {
       if (audioElement.readyState === 4) {
         setCurrentTime(audioElement.currentTime);
@@ -36,20 +37,17 @@ export default function Player({
     return () => {
       audioElement.removeEventListener("timeupdate", updateTime);
     };
-
+    
   }, [isPlaying, currentIndex]);
+  
+  const duration = audioRef.current?.duration ?? 0;
 
-
-  if (audioRef.current) console.log("duration", audioRef.current.duration, "current", currentTime);
+  if (audioRef.current) console.log("duration", duration, "current", currentTime);
 
   return (
     <div>
       <audio ref={audioRef} src={currentSong.music}></audio>
       <div className="player-card">
-        <progress className="progress-bar" 
-          value={currentTime} 
-          max={audioRef.current.duration}>
-        </progress>
         <div className="image-container">
           <img className="music-image" src={currentSong.cover} alt="Music" />
         </div>
@@ -90,6 +88,12 @@ export default function Player({
             onClick={nextSong}
           />
         </div>
+        <div>
+            <progress className="progress-bar" 
+              value={currentTime} 
+              max={duration}>
+            </progress>
+          </div>
       </div>
     </div>
   );
