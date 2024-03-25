@@ -17,19 +17,39 @@ export default function Player({
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
-
+  
+  const [currentTime, setCurrentTime] = useState(0); 
+  
   useEffect(() => {
+    const audioElement = audioRef.current
     if (isPlaying) {
-      audioRef.current.play();
+      audioElement.play();
     } else {
-      audioRef.current.pause();
+      audioElement.pause();
     }
+    const updateTime = () => {
+      if (audioElement.readyState === 4) {
+        setCurrentTime(audioElement.currentTime);
+      } 
+    };
+    audioElement.addEventListener("timeupdate", updateTime);
+    return () => {
+      audioElement.removeEventListener("timeupdate", updateTime);
+    };
+
   }, [isPlaying, currentIndex]);
+
+
+  if (audioRef.current) console.log("duration", audioRef.current.duration, "current", currentTime);
 
   return (
     <div>
       <audio ref={audioRef} src={currentSong.music}></audio>
       <div className="player-card">
+        <progress className="progress-bar" 
+          value={currentTime} 
+          max={audioRef.current.duration}>
+        </progress>
         <div className="image-container">
           <img className="music-image" src={currentSong.cover} alt="Music" />
         </div>
