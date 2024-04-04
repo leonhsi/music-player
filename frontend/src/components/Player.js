@@ -17,14 +17,32 @@ export default function Player({
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
-
+  
+  const [currentTime, setCurrentTime] = useState(0); 
+  
   useEffect(() => {
+    const audioElement = audioRef.current;
     if (isPlaying) {
-      audioRef.current.play();
+      audioElement.play();
     } else {
-      audioRef.current.pause();
+      audioElement.pause();
     }
+    // get audio currentTime change event and update the value
+    const updateTime = () => {
+      if (audioElement.readyState === 4) {
+        setCurrentTime(audioElement.currentTime);
+      } 
+    };
+    audioElement.addEventListener("timeupdate", updateTime);
+    return () => {
+      audioElement.removeEventListener("timeupdate", updateTime);
+    };
+    
   }, [isPlaying, currentIndex]);
+  
+  const duration = audioRef.current?.duration ?? 0;
+
+  if (audioRef.current) console.log("duration", duration, "current", currentTime);
 
   return (
     <div>
@@ -70,6 +88,12 @@ export default function Player({
             onClick={nextSong}
           />
         </div>
+        <div>
+            <progress className="progress-bar" 
+              value={currentTime} 
+              max={duration}>
+            </progress>
+          </div>
       </div>
     </div>
   );
